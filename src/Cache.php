@@ -111,6 +111,27 @@ class Cache
         }
         return $this->redis->hmset($key,$fieldValues);
     }
+    public function sadd($key, $member)
+    {
+        if (!empty($this->redis->prefix)) {
+            $key = $this->redis->prefix.$key;
+        }
+        return $this->redis->sadd($key,$member);
+    }
+    public function sismember($key, $member)
+    {
+        if (!empty($this->redis->prefix)) {
+            $key = $this->redis->prefix.$key;
+        }
+        return $this->redis->sismember($key,$member);
+    }
+    public function srem($key, $member)
+    {
+        if (!empty($this->redis->prefix)) {
+            $key = $this->redis->prefix.$key;
+        }
+        return $this->redis->srem($key,$member);
+    }
     /**
      * 返回列表key从索引start到stop 的值
      * @param $key

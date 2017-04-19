@@ -12,7 +12,7 @@ Edit your composer.json
     "repositories": [  
       {  
         "type": "git",  
-        "url":  "https://github.com/ter987/php-redis.git"
+        "url":  "https://github.com/rupeelabs/phpredis.git"
       }
     ]
   }
